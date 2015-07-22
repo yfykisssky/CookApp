@@ -12,6 +12,5 @@
 	<classpathentry combineaccessrules="false" exported="true" kind="src" path="/refresh_library"/>
 	<classpathentry kind="src" path="src"/>
 	<classpathentry kind="src" path="gen"/>
-	<classpathentry exported="true" kind="lib" path="/Users/yfykisssky/Documents/workspace/appcompat_v7/libs/android-support-v4.jar"/>
 	<classpathentry kind="output" path="bin/classes"/>
 </classpath>
