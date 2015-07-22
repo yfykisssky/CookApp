@@ -84,6 +84,7 @@ public class GuideActivity extends Activity implements OnClickListener{
 		});
 
 		viewPager.setCurrentItem(0);
+		
 	}
 
 	class MyPageAdapter extends PagerAdapter{
