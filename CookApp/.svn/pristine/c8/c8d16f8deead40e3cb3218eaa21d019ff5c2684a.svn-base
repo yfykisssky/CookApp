@@ -1,0 +1,83 @@
+package com.cookapp.cookapp.fragment;
+
+import android.app.Fragment;
+import android.content.Intent;
+import android.os.Bundle;
+import android.view.LayoutInflater;
+import android.view.View;
+import android.view.ViewGroup;
+
+import com.cookapp.cookapp.R;
+import com.tencent.connect.common.Constants;
+import com.tencent.tauth.IUiListener;
+import com.tencent.tauth.Tencent;
+import com.tencent.tauth.UiError;
+import com.umeng.analytics.MobclickAgent;
+
+public class PersionCenterFragment extends Fragment {
+
+	String UM_TAG="";
+
+	View view;
+
+	@Override
+	public View onCreateView(LayoutInflater inflater, ViewGroup container,Bundle savedInstanceState) {
+
+		view=inflater.inflate(R.layout.fragment_persion_center,null);
+
+		return view;
+	}
+
+	@Override
+	public void onResume() {
+		super.onResume();
+		MobclickAgent.onPageStart(UM_TAG);
+		MobclickAgent.onResume(this.getActivity());
+	}
+
+	@Override
+	public void onPause() {
+		super.onPause();
+		MobclickAgent.onPageEnd(UM_TAG);
+		MobclickAgent.onPause(this.getActivity());
+	}
+
+	public void QQLogin()
+	{
+		Tencent	mTencent = Tencent.createInstance("", this.getActivity().getApplicationContext());
+
+		IUiListener listener=new IUiListener() {
+
+			@Override
+			public void onError(UiError arg0) {
+
+			}
+
+			@Override
+			public void onComplete(Object arg0) {
+
+			}
+
+			@Override
+			public void onCancel() {
+
+			}
+		};
+
+		if (!mTencent.isSessionValid())
+		{
+			mTencent.login(this.getActivity(),"get_user_info,add_t",listener);
+		}
+		
+		//mTencent.logout(this);
+	} 
+	
+/*	protected void onActivityResult(int requestCode, int resultCode, Intent data) {
+	    if(requestCode == Constants.REQUEST_API) {
+		if(resultCode == Constants.RESULT_LOGIN) {
+		    mTencent.handleLoginData(data, loginListener);
+	    }
+	    super.onActivityResult(requestCode, resultCode, data);
+	}*/
+
+}

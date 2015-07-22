@@ -1,0 +1,64 @@
+package com.cookapp.cookapp.fragment;
+
+import com.cookapp.cookapp.R;
+
+import android.os.Bundle;
+import android.support.v4.app.Fragment;
+import android.view.LayoutInflater;
+import android.view.View;
+import android.view.View.OnClickListener;
+import android.view.ViewGroup;
+import android.widget.RelativeLayout;
+
+public class MoreFragment extends Fragment implements OnClickListener{
+
+	View view;
+
+	@Override
+	public View onCreateView(LayoutInflater inflater, ViewGroup container,Bundle savedInstanceState) {
+
+		view=inflater.inflate(R.layout.fragment_more,null);
+
+		return view;
+	}
+	
+	void initView(){
+		((RelativeLayout)view.findViewById(R.id.saveweb_rela_MoreFrag)).setOnClickListener(this);
+		((RelativeLayout)view.findViewById(R.id.messageremind_rela_MoreFrag)).setOnClickListener(this);
+		((RelativeLayout)view.findViewById(R.id.sharesetting_rela_MoreFrag)).setOnClickListener(this);
+		((RelativeLayout)view.findViewById(R.id.invitefriends_rela_MoreFrag)).setOnClickListener(this);
+		((RelativeLayout)view.findViewById(R.id.clearsave_rela_MoreFrag)).setOnClickListener(this);
+		
+		((RelativeLayout)view.findViewById(R.id.feedback_rela_MoreFrag)).setOnClickListener(this);
+		((RelativeLayout)view.findViewById(R.id.diagnoseweb_rela_MoreFrag)).setOnClickListener(this);
+		((RelativeLayout)view.findViewById(R.id.about_rela_MoreFrag)).setOnClickListener(this);
+		((RelativeLayout)view.findViewById(R.id.competitiveproducts_rela_MoreFrag)).setOnClickListener(this);
+		((RelativeLayout)view.findViewById(R.id.scaning_rela_MoreFrag)).setOnClickListener(this);
+	}
+
+	@Override
+	public void onClick(View id) {
+		switch(id.getId()){
+		case R.id.saveweb_rela_MoreFrag:
+			break;
+		case R.id.messageremind_rela_MoreFrag:
+			break;
+		case R.id.sharesetting_rela_MoreFrag:
+			break;
+		case R.id.invitefriends_rela_MoreFrag:
+			break;
+		case R.id.clearsave_rela_MoreFrag:
+			break;
+		case R.id.feedback_rela_MoreFrag:
+			break;
+		case R.id.diagnoseweb_rela_MoreFrag:
+			break;
+		case R.id.about_rela_MoreFrag:
+			break;
+		case R.id.competitiveproducts_rela_MoreFrag:
+			break;
+		case R.id.scaning_rela_MoreFrag:
+			break;
+		}
+	}
+}

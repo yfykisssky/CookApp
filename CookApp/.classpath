@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<classpath>
+	<classpathentry exported="true" kind="con" path="com.android.ide.eclipse.adt.ANDROID_FRAMEWORK"/>
+	<classpathentry exported="true" kind="con" path="com.android.ide.eclipse.adt.LIBRARIES"/>
+	<classpathentry exported="true" kind="con" path="com.android.ide.eclipse.adt.DEPENDENCIES"/>
+	<classpathentry exported="true" kind="lib" path="libs/umeng-analytics-v5.5.3.jar"/>
+	<classpathentry exported="true" kind="lib" path="libs/jpush-sdk-release1.7.5.jar"/>
+	<classpathentry exported="true" kind="lib" path="libs/mta-sdk-1.6.2.jar"/>
+	<classpathentry exported="true" kind="lib" path="libs/open_sdk_r5043.jar"/>
+	<classpathentry exported="true" kind="lib" path="libs/zxing.jar"/>
+	<classpathentry exported="true" kind="lib" path="libs/gson-2.3.1.jar"/>
+	<classpathentry combineaccessrules="false" exported="true" kind="src" path="/refresh_library"/>
+	<classpathentry kind="src" path="src"/>
+	<classpathentry kind="src" path="gen"/>
+	<classpathentry exported="true" kind="lib" path="/Users/yfykisssky/Documents/workspace/appcompat_v7/libs/android-support-v4.jar"/>
+	<classpathentry kind="output" path="bin/classes"/>
+</classpath>

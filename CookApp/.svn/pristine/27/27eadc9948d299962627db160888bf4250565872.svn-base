@@ -1,0 +1,32 @@
+package com.cookapp.cookapp.tools;
+
+import com.cookapp.cookapp.activity.HomeActivity;
+import cn.jpush.android.api.JPushInterface;
+import android.content.BroadcastReceiver;
+import android.content.Context;
+import android.content.Intent;
+import android.os.Bundle;
+
+public class JPushReceiver extends BroadcastReceiver {
+
+	@Override
+	public void onReceive(Context context, Intent intent) {
+		Bundle bundle = intent.getExtras();
+		MyLog.e("", "receive" + intent.getAction());
+
+		if (JPushInterface.ACTION_REGISTRATION_ID.equals(intent.getAction())) {
+		}else if (JPushInterface.ACTION_MESSAGE_RECEIVED.equals(intent.getAction())) {
+
+		} else if (JPushInterface.ACTION_NOTIFICATION_RECEIVED.equals(intent.getAction())) {
+
+		} else if (JPushInterface.ACTION_NOTIFICATION_OPENED.equals(intent.getAction())) {
+
+			Intent i = new Intent(context,HomeActivity.class);
+			i.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+			context.startActivity(i);
+		} else {
+			MyLog.e("", "Unhandled intent - " + intent.getAction());
+		}
+	}
+
+}

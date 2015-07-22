@@ -1,0 +1,9 @@
+package com.cookapp.cookapp.tools;
+
+import android.util.Log;
+
+public class MyLog {
+	public static void e(String title,String message){
+		Log.e(title,message);
+	}
+}

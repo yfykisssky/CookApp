@@ -1,0 +1,7 @@
+package com.cookapp.cookapp.contants;
+
+public class WebContants {
+
+	final static String serviceUrl="";
+	
+}

@@ -1,0 +1,151 @@
+package com.cookapp.cookapp.fragment;
+
+import com.cookapp.cookapp.R;
+import com.cookapp.cookapp.tools.DownloadFileHelper;
+import com.cookapp.cookapp.view.PullToRefreshView;
+import com.cookapp.cookapp.view.PullToRefreshView.OnLoadListener;
+import com.cookapp.cookapp.view.PullToRefreshView.OnRefreshListener;
+import com.umeng.analytics.MobclickAgent;
+
+import android.os.AsyncTask;
+import android.os.Bundle;
+import android.support.v4.app.Fragment;
+import android.view.LayoutInflater;
+import android.view.View;
+import android.view.ViewGroup;
+import android.widget.BaseAdapter;
+import android.widget.ImageView;
+import android.widget.ListView;
+
+public class MainFragment extends Fragment {
+
+	String UM_TAG="";
+
+	View view;
+
+	PullToRefreshView mPullToRefreshView;
+	
+	ListView imageList;
+
+	@Override
+	public View onCreateView(LayoutInflater inflater, ViewGroup container,Bundle savedInstanceState) {
+
+		view=inflater.inflate(R.layout.fragment_main,null);
+
+		initView();
+		
+		String urlPath="http://img1.cache.netease.com/catchpic/2/2B/2B2752B4C13FE832D7839FD7075FCC78.jpg";
+		
+		String filePath=this.getActivity().getFilesDir()+"//"+DownloadFileHelper.getUrlFileName(urlPath);
+		
+		try {
+			((ImageView)view.findViewById(R.id.image)).setImageBitmap(DownloadFileHelper.getImageBitmap(urlPath, filePath));
+		} catch (Exception e) {
+			e.printStackTrace();
+		};
+		
+		return view;
+	}
+
+	@Override
+	public void onResume() {
+		super.onResume();
+		MobclickAgent.onPageStart(UM_TAG);
+		MobclickAgent.onResume(this.getActivity());
+	}
+
+	@Override
+	public void onPause() {
+		super.onPause();
+		MobclickAgent.onPageEnd(UM_TAG);
+		MobclickAgent.onPause(this.getActivity());
+	}
+
+	void initView() {
+		
+		mPullToRefreshView = (PullToRefreshView)view.findViewById(R.id.pull_to_refresh_mainFrag);
+		
+		imageList=(ListView)view.findViewById(R.id.image_list_mainFrag);
+		
+		MyImageListAdapter myImageListAdapter=new MyImageListAdapter();
+		
+		imageList.setAdapter(myImageListAdapter);
+		
+		//这个方法必须要调用initLayoutParams()
+		mPullToRefreshView.initLayoutParams();
+		mPullToRefreshView.setOnRefreshListener(new OnRefreshListener() {
+			@Override
+			public void onRefresh() {
+				super.onRefresh();
+				//模拟刷新
+				new AsyncTask<Integer, Integer, Integer>() {
+
+					@Override
+					protected Integer doInBackground(Integer... params) {
+						try {
+							//睡眠2秒
+							Thread.sleep(2000);
+						} catch (Exception e) {
+							e.printStackTrace();
+						}
+						return null;
+					}
+
+					protected void onPostExecute(Integer result) {
+						stopRefresh();
+					};
+				}.execute();
+			}
+		});
+
+		mPullToRefreshView.setOnLoadListener(new OnLoadListener() {
+			@Override
+			public void onLoad() {
+				//模拟加载更多
+				new AsyncTask<Integer, Integer, Integer>() {
+
+					@Override
+					protected Integer doInBackground(Integer... params) {
+						try {
+							//睡眠2秒
+							Thread.sleep(2000);
+						} catch (Exception e) {
+							e.printStackTrace();
+						}
+						return null;
+					}
+
+					protected void onPostExecute(Integer result) {
+						stopLoad();
+					};
+				}.execute();
+				super.onLoad();
+			}
+		});
+	}
+	
+	class MyImageListAdapter extends BaseAdapter{
+
+		@Override
+		public int getCount() {
+			return 0;
+		}
+
+		@Override
+		public Object getItem(int arg0) {
+			return null;
+		}
+
+		@Override
+		public long getItemId(int arg0) {
+			return 0;
+		}
+
+		@Override
+		public View getView(int arg0, View contentView, ViewGroup arg2) {
+			return null;
+		}
+		
+	}
+
+}
