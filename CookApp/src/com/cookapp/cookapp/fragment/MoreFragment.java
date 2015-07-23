@@ -115,7 +115,7 @@ public class MoreFragment extends Fragment implements OnClickListener{
 			break;
 		case R.id.update_rela_MoreFrag:
 
-			FileHelper.updateVersionFile("http://gdown.baidu.com/data/wisegame/89f2cc358ae029db/baidushoujiweishi_2150.apk",mContext);
+			FileHelper.updateVersionFile(WebContants.UPDATE_VERSION_URL,mContext);
 
 			break;
 		}
