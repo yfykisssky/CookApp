@@ -73,8 +73,20 @@
             android:name="com.cookapp.cookapp.activity.CompetitiveProductsActivity"
             android:theme="@android:style/Theme.NoTitleBar" >
         </activity>
-           <activity
+        <activity
             android:name="com.cookapp.cookapp.activity.AboutActivity"
+            android:theme="@android:style/Theme.NoTitleBar" >
+        </activity>
+        <activity
+            android:name="com.cookapp.cookapp.activity.RegisterActivity"
+            android:theme="@android:style/Theme.NoTitleBar" >
+        </activity>
+        <activity
+            android:name="com.cookapp.cookapp.activity.PhoneLoginActivity"
+            android:theme="@android:style/Theme.NoTitleBar" >
+        </activity>
+        <activity
+            android:name="com.cookapp.cookapp.activity.FindBackPswdActivity"
             android:theme="@android:style/Theme.NoTitleBar" >
         </activity>
         <activity
@@ -85,7 +97,7 @@
             android:name="com.cookapp.cookapp.activity.FeedBackActivity"
             android:theme="@android:style/Theme.NoTitleBar" >
         </activity>
-             <activity
+        <activity
             android:name="com.cookapp.cookapp.activity.MessageListActivity"
             android:theme="@android:style/Theme.NoTitleBar" >
         </activity>

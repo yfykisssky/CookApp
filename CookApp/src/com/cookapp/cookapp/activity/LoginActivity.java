@@ -15,6 +15,7 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageButton;
 import android.widget.ImageView;
+import android.widget.TextView;
 
 public class LoginActivity extends Activity implements OnClickListener{
 
@@ -35,6 +36,12 @@ public class LoginActivity extends Activity implements OnClickListener{
 	IUiListener loginListener;
 	
 	ImageView bntBack;
+	
+	TextView bntRegister;
+	
+	TextView bntPhoneQuickLogin;
+	
+	TextView bntFindBackPswd;
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
@@ -58,6 +65,18 @@ public class LoginActivity extends Activity implements OnClickListener{
 		bntBack=(ImageView)findViewById(R.id.image_back_loginActi);
 		
 		bntBack.setOnClickListener(this);
+		
+		bntRegister=(TextView)findViewById(R.id.register_tex_loginActi);
+		
+		bntRegister.setOnClickListener(this);
+		
+		bntPhoneQuickLogin=(TextView)findViewById(R.id.phone_login_tex_loginActi);
+		
+		bntPhoneQuickLogin.setOnClickListener(this);
+		
+		bntFindBackPswd=(TextView)findViewById(R.id.findback_password_loginActi);
+		
+		bntFindBackPswd.setOnClickListener(this);
 
 	}
 
@@ -106,6 +125,15 @@ public class LoginActivity extends Activity implements OnClickListener{
 			break;
 		case R.id.image_back_loginActi:
 			finish();
+			break;
+		case R.id.register_tex_loginActi:
+			startActivity(new Intent(this,RegisterActivity.class));
+			break;
+		case R.id.phone_login_tex_loginActi:
+			startActivity(new Intent(this,PhoneLoginActivity.class));
+			break;
+		case R.id.findback_password_loginActi:
+			startActivity(new Intent(this,FindBackPswdActivity.class));
 			break;
 		}
 	}
