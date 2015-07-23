@@ -2,11 +2,6 @@ package com.cookapp.cookapp.view;
 
 import java.util.ArrayList;
 import java.util.List;
-
-import com.cookapp.cookapp.tools.AsyncImageLoader;
-import com.cookapp.cookapp.tools.AsyncImageLoader.ImageCallback;
-import com.cookapp.cookapp.tools.FileHelper;
-
 import android.content.Context;
 import android.graphics.Bitmap;
 import android.os.Handler;
@@ -16,6 +11,8 @@ import android.util.AttributeSet;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
+import com.cookapp.cookapp.tools.AsyncImageLoader;
+import com.cookapp.cookapp.tools.AsyncImageLoader.ImageCallback;
 
 public class SlideShowView extends ViewPager{
 
@@ -50,9 +47,7 @@ public class SlideShowView extends ViewPager{
 
 	}
 
-	void setImageList(List<String> imagePath,String downLoadPath){
-
-		
+	public void setImageList(List<String> imagePath,String downLoadPath){
 
 		for(int r=0;r<imagePath.size();r++){
 			
@@ -79,7 +74,7 @@ public class SlideShowView extends ViewPager{
 
 	}
 
-	void setTransTime(final int time){
+	public void setTransTime(final int time){
 
 		this.time=time;
 

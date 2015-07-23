@@ -29,8 +29,7 @@ public class AsyncImageLoader {
 
 			SoftReference<Bitmap> softReference = imageCache.get(imageUrl);
 
-			if (softReference.get()
-					!= null)
+			if (softReference.get()!= null)
 			{
 
 				return softReference.get();

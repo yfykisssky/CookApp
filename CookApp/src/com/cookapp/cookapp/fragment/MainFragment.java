@@ -48,7 +48,7 @@ public class MainFragment extends Fragment implements OnClickListener{
 
 	SlideShowView slideShowView;
 	List<ProductsModel> slideShowProducts=new ArrayList<ProductsModel>();
-	
+
 	ListView imageList;
 	MyImageListAdapter myImageListAdapter;
 
@@ -59,7 +59,7 @@ public class MainFragment extends Fragment implements OnClickListener{
 	Fragment mFragment;
 
 	final int  SCANNIN_GREQUEST_CODE=1;
-	
+
 	String IMAGE_DOWNLOAD_PATH="";
 
 	@Override
@@ -72,37 +72,43 @@ public class MainFragment extends Fragment implements OnClickListener{
 		mFragment=this;
 
 		initView();
+		
+		setTestData();
 
 		asyncImageLoader=new AsyncImageLoader();
-
-		String urlPath="http://img1.cache.netease.com/catchpic/2/2B/2B2752B4C13FE832D7839FD7075FCC78.jpg";
-
-		String filePath=this.getActivity().getFilesDir()+"//"+FileHelper.getUrlFileName(urlPath);
-
-		try {
-			((ImageView)view.findViewById(R.id.image)).setImageBitmap(FileHelper.getImageBitmap(urlPath, filePath,""));
-		} catch (Exception e) {
-			e.printStackTrace();
-		};
 
 		return view;
 	}
 
-	
+
 	void setTestData(){
+
+		List<String> listStr=new ArrayList<String>();
 		
-		for(int v=0;v<50;v++){
-			
+		for(int v=0;v<5;v++){
+
 			ProductsModel productsModel=new ProductsModel();
 			productsModel.imageLinkUrl="http://img1.cache.netease.com/catchpic/2/2B/2B2752B4C13FE832D7839FD7075FCC78.jpg";
 			productsModel.title="123";
-			
+			slideShowProducts.add(productsModel);	
+			listStr.add(productsModel.imageLinkUrl);
 		}
+
+		slideShowView.setImageList(listStr,IMAGE_DOWNLOAD_PATH);
+		slideShowView.setTransTime(3);
 		
+		for(int v=0;v<50;v++){
+
+			ProductsModel productsModel=new ProductsModel();
+			productsModel.imageLinkUrl="http://img1.cache.netease.com/catchpic/2/2B/2B2752B4C13FE832D7839FD7075FCC78.jpg";
+			productsModel.title="123";
+			listProducts.add(productsModel);
+		}
+
 		myImageListAdapter.notifyDataSetChanged();
-		
+
 	}
-	
+
 	@Override
 	public void onResume() {
 		super.onResume();
@@ -181,15 +187,15 @@ public class MainFragment extends Fragment implements OnClickListener{
 				myViewHolder.rightTex=(TextView)contentView.findViewById(R.id.item_tex_right_main_frag);
 
 				myViewHolder.rightImage=(ImageView)contentView.findViewById(R.id.item_img_right_main_frag);
-				
+
 				myViewHolder.leftTex.setText(listProducts.get(position*2-1).title);
-				
+
 				myViewHolder.rightTex.setText(listProducts.get(position*2).title);
-				
+
 				final ImageView newLeftImage=myViewHolder.leftImage;
-				
+
 				final ImageView newRightImage=myViewHolder.rightImage;
-				
+
 				asyncImageLoader.loadImage(listProducts.get(position*2-1).imageLinkUrl,IMAGE_DOWNLOAD_PATH,new ImageCallback() {
 
 					@Override
@@ -197,7 +203,7 @@ public class MainFragment extends Fragment implements OnClickListener{
 						newLeftImage.setImageBitmap(bitmap);
 					}
 				});
-				
+
 				asyncImageLoader.loadImage(listProducts.get(position*2).imageLinkUrl,IMAGE_DOWNLOAD_PATH,new ImageCallback() {
 
 					@Override
@@ -209,7 +215,7 @@ public class MainFragment extends Fragment implements OnClickListener{
 			}else{
 				myViewHolder=(MyViewHolder)contentView.getTag();
 			}
-			
+
 			return contentView;
 		}
 
