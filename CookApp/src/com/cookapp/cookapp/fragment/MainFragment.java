@@ -93,10 +93,13 @@ public class MainFragment extends Fragment implements OnClickListener{
 		for(int v=0;v<50;v++){
 			
 			ProductsModel productsModel=new ProductsModel();
-			productsModel.imageLinkUrl="";
+			productsModel.imageLinkUrl="http://img1.cache.netease.com/catchpic/2/2B/2B2752B4C13FE832D7839FD7075FCC78.jpg";
 			productsModel.title="123";
 			
 		}
+		
+		myImageListAdapter.notifyDataSetChanged();
+		
 	}
 	
 	@Override
