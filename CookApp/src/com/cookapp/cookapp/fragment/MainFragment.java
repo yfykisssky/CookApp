@@ -13,7 +13,7 @@ import android.widget.ListView;
 import android.widget.ScrollView;
 import com.cookapp.cookapp.R;
 import com.cookapp.cookapp.activity.CodeCaptureActivity;
-import com.cookapp.cookapp.tools.GetFileHelper;
+import com.cookapp.cookapp.tools.FileHelper;
 import com.cookapp.cookapp.view.SlideShowView;
 import com.handmark.pulltorefresh.library.PullToRefreshBase;
 import com.handmark.pulltorefresh.library.PullToRefreshBase.Mode;
@@ -47,10 +47,10 @@ public class MainFragment extends Fragment implements OnClickListener{
 		
 		String urlPath="http://img1.cache.netease.com/catchpic/2/2B/2B2752B4C13FE832D7839FD7075FCC78.jpg";
 		
-		String filePath=this.getActivity().getFilesDir()+"//"+GetFileHelper.getUrlFileName(urlPath);
+		String filePath=this.getActivity().getFilesDir()+"//"+FileHelper.getUrlFileName(urlPath);
 		
 		try {
-			((ImageView)view.findViewById(R.id.image)).setImageBitmap(GetFileHelper.getImageBitmap(urlPath, filePath,""));
+			((ImageView)view.findViewById(R.id.image)).setImageBitmap(FileHelper.getImageBitmap(urlPath, filePath,""));
 		} catch (Exception e) {
 			e.printStackTrace();
 		};

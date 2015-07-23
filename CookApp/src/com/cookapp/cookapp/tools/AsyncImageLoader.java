@@ -49,7 +49,7 @@ public class AsyncImageLoader {
 
 				try {
 
-					final Bitmap bitmap =GetFileHelper.getImageBitmap(imageUrl,filePath,null); 
+					final Bitmap bitmap =FileHelper.getImageBitmap(imageUrl,filePath,null); 
 
 					imageCache.put(imageUrl,new SoftReference<Bitmap>(bitmap));
 

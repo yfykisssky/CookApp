@@ -2,7 +2,7 @@ package com.cookapp.cookapp.view;
 
 import java.util.ArrayList;
 import java.util.List;
-import com.cookapp.cookapp.tools.GetFileHelper;
+import com.cookapp.cookapp.tools.FileHelper;
 import android.content.Context;
 import android.graphics.Bitmap;
 import android.os.Handler;
@@ -51,7 +51,7 @@ public class SlideShowView extends ViewPager{
 		for(int r=0;r<imagePath.size();r++){
 			try {
 
-				Bitmap bitmap=GetFileHelper.getImageBitmap(imagePath.get(r),null,"");
+				Bitmap bitmap=FileHelper.getImageBitmap(imagePath.get(r),null,"");
 				imageView.setImageBitmap(bitmap);
 				imageList.add(imageView);
 

@@ -39,19 +39,13 @@
             android:textSize="15sp" />
     </RelativeLayout>
 
-    <LinearLayout
+    <com.handmark.pulltorefresh.library.PullToRefreshListView
+        android:id="@+id/feedback_list_feedActi"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_below="@+id/title_loginActi"
-        android:layout_marginBottom="50dp"
-        android:orientation="vertical" >
-
-        <ListView
-            android:id="@+id/feedback_list_feedActi"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent" >
-        </ListView>
-    </LinearLayout>
+        android:layout_marginBottom="50dp" >
+    </com.handmark.pulltorefresh.library.PullToRefreshListView>
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -67,10 +61,10 @@
 
         <Button
             android:id="@+id/commit_bnt_feedActi"
-            android:text="@string/commit"
             android:layout_width="wrap_content"
             android:layout_height="match_parent"
-            android:layout_weight="1" />
+            android:layout_weight="1"
+            android:text="@string/commit" />
     </LinearLayout>
 
 </RelativeLayout>

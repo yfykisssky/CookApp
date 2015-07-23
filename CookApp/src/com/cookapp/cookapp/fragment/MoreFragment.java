@@ -22,7 +22,7 @@ import com.cookapp.cookapp.contants.Contants;
 import com.cookapp.cookapp.contants.WebContants;
 import com.cookapp.cookapp.tools.APPHelper;
 import com.cookapp.cookapp.tools.DataCleanHelper;
-import com.cookapp.cookapp.tools.GetFileHelper;
+import com.cookapp.cookapp.tools.FileHelper;
 import com.cookapp.cookapp.tools.GetNetwork;
 import com.cookapp.cookapp.tools.SharedPreferencesHelper;
 import com.cookapp.cookapp.tools.WebDataHelper;
@@ -115,7 +115,7 @@ public class MoreFragment extends Fragment implements OnClickListener{
 			break;
 		case R.id.update_rela_MoreFrag:
 
-			GetFileHelper.updateVersionFile("http://gdown.baidu.com/data/wisegame/89f2cc358ae029db/baidushoujiweishi_2150.apk",mContext);
+			FileHelper.updateVersionFile("http://gdown.baidu.com/data/wisegame/89f2cc358ae029db/baidushoujiweishi_2150.apk",mContext);
 
 			break;
 		}

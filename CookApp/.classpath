@@ -13,5 +13,6 @@
 	<classpathentry kind="src" path="src"/>
 	<classpathentry kind="src" path="gen"/>
 	<classpathentry exported="true" kind="lib" path="D:/WORK_SPACE/CookApp/CookApp/appcompat_v7/libs/android-support-v4.jar"/>
+	<classpathentry exported="true" kind="lib" path="D:/WORK_SPACE/CookApp/CookApp/refresh_library/bin/refresh_library.jar" sourcepath="/refresh_library/src"/>
 	<classpathentry kind="output" path="bin/classes"/>
 </classpath>

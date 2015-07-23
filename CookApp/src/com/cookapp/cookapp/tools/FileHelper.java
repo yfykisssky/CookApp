@@ -1,5 +1,6 @@
 package com.cookapp.cookapp.tools;
 
+import java.io.DataOutputStream;
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileOutputStream;
@@ -8,9 +9,7 @@ import java.io.InputStream;
 import java.net.HttpURLConnection;
 import java.net.MalformedURLException;
 import java.net.URL;
-
 import com.cookapp.cookapp.R;
-
 import android.app.Dialog;
 import android.content.Context;
 import android.content.Intent;
@@ -21,7 +20,6 @@ import android.graphics.BitmapFactory;
 import android.net.Uri;
 import android.os.Handler;
 import android.os.Message;
-import android.view.Display;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.view.Window;
@@ -31,11 +29,16 @@ import android.widget.ProgressBar;
 import android.widget.TextView;
 
 @SuppressWarnings("deprecation")
-public class GetFileHelper {
+public class FileHelper {
 
 	public static String getUrlFileName(String urlPath){
 		String result = urlPath.substring(urlPath.lastIndexOf('/')+1); 
 		return result;
+	}
+	
+	String getUriPathFileName(String fileUri){
+		String fileName=fileUri.substring(fileUri.lastIndexOf("\\"));
+		return fileName;
 	}
 
 	public static Uri getDownLoadFileURI(String urlPath,String filePath,String MD5Str) throws Exception {
@@ -121,7 +124,7 @@ public class GetFileHelper {
 		final Dialog downloadDialog=new Dialog(context);
 		downloadDialog.requestWindowFeature(Window.FEATURE_NO_TITLE);
 		downloadDialog.setContentView(R.layout.dialog_update_file);
-		
+
 		WindowManager.LayoutParams params =downloadDialog.getWindow().getAttributes();
 		params.width = (int) (APPHelper.getWindowWidth(context)* 0.7);  
 		params.height = (int) (APPHelper.getWindowHeight(context) * 0.2);  
@@ -230,6 +233,80 @@ public class GetFileHelper {
 			Intent intent = manager.getLaunchIntentForPackage(info.applicationInfo.packageName);
 			context.startActivity(intent);
 		}
+	}
+
+	public void uploadFile(String uploadUrl,UploadPercentCallBack mCallBack,String newName)
+	{
+		String end ="\r\n";
+		String twoHyphens ="--";
+		String boundary ="*****";
+		try
+		{
+			URL url =new URL(uploadUrl);
+			HttpURLConnection con=(HttpURLConnection)url.openConnection();
+			/* 允许Input、Output，不使用Cache */
+			con.setDoInput(true);
+			con.setDoOutput(true);
+			con.setUseCaches(false);
+			/* 设置传送的method=POST */
+			con.setRequestMethod("POST");
+			/* setRequestProperty */
+			con.setRequestProperty("Connection", "Keep-Alive");
+			con.setRequestProperty("Charset", "UTF-8");
+			con.setRequestProperty("Content-Type","multipart/form-data;boundary="+boundary);
+			/* 设置DataOutputStream */
+			DataOutputStream ds =new DataOutputStream(con.getOutputStream());
+			ds.writeBytes(twoHyphens + boundary + end);
+			ds.writeBytes("Content-Disposition: form-data;"+"name=\"file1\";filename=\""+newName +"\""+ end);
+			ds.writeBytes(end);  
+			/* 取得文件的FileInputStream */
+			FileInputStream fStream =new FileInputStream(uploadUrl);
+
+			long fileLength=fStream.getChannel().size();
+
+			/* 设置每次写入1024bytes */
+			int bufferSize =1024;
+			byte[] buffer =new byte[bufferSize];
+			int length =-1;
+			/* 从文件读取数据至缓冲区 */
+			while((length = fStream.read(buffer)) !=-1)
+			{
+				/* 将资料写入DataOutputStream中 */
+				ds.write(buffer, 0, length);
+			}
+			ds.writeBytes(end);
+			ds.writeBytes(twoHyphens + boundary + twoHyphens + end);
+			/* close streams */
+			fStream.close();
+			ds.flush();
+			/* 取得Response内容 */
+			InputStream is = con.getInputStream();
+			int ch=0;
+			int total=0;
+			int percent=0;
+			StringBuffer b =new StringBuffer();
+			while( ( ch = is.read() ) !=-1 )
+			{
+				total+=ch;
+				percent=(int)(total*100/fileLength);
+				
+				mCallBack.getUploadPercent(percent);
+				
+				b.append( (char)ch );
+			}
+			
+			mCallBack.getUploadPercent(percent);
+			/* 关闭DataOutputStream */
+			ds.close();
+		}
+		catch(Exception e)
+		{
+			mCallBack.getUploadPercent(-1);
+		}
+	}
+	
+	interface UploadPercentCallBack{
+		public void getUploadPercent(int percent);
 	}
 
 }
