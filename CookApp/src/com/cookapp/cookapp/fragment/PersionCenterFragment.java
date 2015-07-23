@@ -1,32 +1,22 @@
 package com.cookapp.cookapp.fragment;
 
-import java.io.ByteArrayOutputStream;
-import java.io.File;
-
 import android.annotation.SuppressLint;
-import android.app.AlertDialog;
 import android.content.Context;
 import android.content.Intent;
-import android.graphics.Bitmap;
-import android.graphics.drawable.Drawable;
-import android.net.Uri;
 import android.os.Bundle;
-import android.os.Environment;
-import android.provider.MediaStore;
 import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
-import android.view.Window;
 import android.view.View.OnClickListener;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
-import android.graphics.drawable.Drawable; 
 
 import com.cookapp.cookapp.R;
 import com.cookapp.cookapp.activity.ClipImageActivity;
 import com.cookapp.cookapp.activity.LoginActivity;
+import com.cookapp.cookapp.model.UserMessage;
 import com.cookapp.cookapp.view.MyDialog;
 import com.umeng.analytics.MobclickAgent;
 
@@ -49,6 +39,12 @@ public class PersionCenterFragment extends Fragment implements OnClickListener{
 	TextView integralTex;
 
 	Context mContext;
+	
+	Fragment mFragment;
+	
+	final int FROM_CLIP_IMAGE_ACTIVITY=0;
+	
+	final int FROM_LOGIN_ACTIVITY=1;
 
 	@Override
 	public View onCreateView(LayoutInflater inflater, ViewGroup container,Bundle savedInstanceState) {
@@ -56,6 +52,8 @@ public class PersionCenterFragment extends Fragment implements OnClickListener{
 		view=inflater.inflate(R.layout.fragment_persion_center,null);
 
 		mContext=this.getActivity();
+		
+		mFragment=this;
 
 		initView();
 
@@ -103,7 +101,7 @@ public class PersionCenterFragment extends Fragment implements OnClickListener{
 		
 		case R.id.login_per_cen_Frag:
 			Intent intent=new Intent(this.getActivity(),LoginActivity.class);
-			startActivity(intent);
+			startActivityForResult(intent,FROM_LOGIN_ACTIVITY);
 			break;
 			
 		case R.id.mymessage_bnt_percen_Frag:
@@ -138,7 +136,9 @@ public class PersionCenterFragment extends Fragment implements OnClickListener{
 					
 					Intent intent=new Intent(mContext,ClipImageActivity.class);
 					intent.putExtra("getImageKind",0);
-					startActivityForResult(intent,0);
+					mFragment.startActivityForResult(intent,FROM_CLIP_IMAGE_ACTIVITY);
+					downPopWindow.dismiss();
+					
 				}
 			});
 
@@ -151,7 +151,8 @@ public class PersionCenterFragment extends Fragment implements OnClickListener{
 					
 					Intent intent=new Intent(mContext,ClipImageActivity.class);
 					intent.putExtra("getImageKind",1);
-					startActivityForResult(intent,0);
+					mFragment.startActivityForResult(intent,FROM_CLIP_IMAGE_ACTIVITY);
+					downPopWindow.dismiss();
 
 				}
 			});
@@ -169,5 +170,27 @@ public class PersionCenterFragment extends Fragment implements OnClickListener{
 			break;
 		}	
 	}
+
+	@Override
+	public void onActivityResult(int requestCode, int resultCode, Intent data) {
+		super.onActivityResult(requestCode,resultCode, data);
+		
+		switch(requestCode){
+		
+		case FROM_CLIP_IMAGE_ACTIVITY:
+			break;
+			
+		case FROM_LOGIN_ACTIVITY:
+			if(resultCode==1){
+				Bundle bundle=data.getExtras();
+				UserMessage userMessage=(UserMessage)bundle.getSerializable("userMessage");
+			}
+			
+			break;
+		}
+		
+	}
+	
+	
 
 }

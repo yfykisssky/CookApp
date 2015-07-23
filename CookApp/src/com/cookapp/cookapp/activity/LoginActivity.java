@@ -1,6 +1,9 @@
 package com.cookapp.cookapp.activity;
 
+import java.io.Serializable;
+
 import com.cookapp.cookapp.R;
+import com.cookapp.cookapp.model.UserMessage;
 import com.tencent.connect.common.Constants;
 import com.tencent.tauth.IUiListener;
 import com.tencent.tauth.Tencent;
@@ -137,9 +140,24 @@ public class LoginActivity extends Activity implements OnClickListener{
 			break;
 		}
 	}
+	
+	void setLoginSuccess(){
+		
+		UserMessage userMessage=new UserMessage();
+		
+		Bundle bundle=new Bundle();
+		
+		bundle.putSerializable("userMessage",(Serializable)userMessage);
+		
+		Intent intent=new Intent();
+		
+		intent.putExtras(bundle);
+		
+		setResult(1);
+	}
 
 	@SuppressWarnings("deprecation")
-	protected void onActivityResult(int requestCode, int resultCode, Intent data) {
+	protected void onActivityResult(int requestCode,int resultCode, Intent data) {
 		if(requestCode == Constants.REQUEST_API) {
 			if(resultCode == Constants.RESULT_LOGIN) {
 				mTencent.handleLoginData(data, loginListener);
