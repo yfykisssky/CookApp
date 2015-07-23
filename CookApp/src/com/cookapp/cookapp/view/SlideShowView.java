@@ -2,7 +2,11 @@ package com.cookapp.cookapp.view;
 
 import java.util.ArrayList;
 import java.util.List;
+
+import com.cookapp.cookapp.tools.AsyncImageLoader;
+import com.cookapp.cookapp.tools.AsyncImageLoader.ImageCallback;
 import com.cookapp.cookapp.tools.FileHelper;
+
 import android.content.Context;
 import android.graphics.Bitmap;
 import android.os.Handler;
@@ -20,6 +24,8 @@ public class SlideShowView extends ViewPager{
 	MyAdapter myAdapter;
 
 	MyPageChangeListener myPageChangeListener;
+	
+	AsyncImageLoader asyncImageLoader=new AsyncImageLoader();
 
 	List<ImageView> imageList=new ArrayList<ImageView>();
 
@@ -44,18 +50,25 @@ public class SlideShowView extends ViewPager{
 
 	}
 
-	void setImageList(List<String> imagePath){
+	void setImageList(List<String> imagePath,String downLoadPath){
 
-		ImageView imageView=new ImageView(mContext);
+		
 
 		for(int r=0;r<imagePath.size();r++){
+			
+			final ImageView imageView=new ImageView(mContext);
+			
 			try {
-
-				Bitmap bitmap=FileHelper.getImageBitmap(imagePath.get(r),null,"");
-				imageView.setImageBitmap(bitmap);
+				
+				asyncImageLoader.loadImage(imagePath.get(r),downLoadPath,new ImageCallback() {
+					
+					@Override
+					public void imageLoaded(Bitmap bitmap) {
+						imageView.setImageBitmap(bitmap);
+					}
+				});
+			
 				imageList.add(imageView);
-
-				bitmap.recycle();
 
 			} catch (Exception e) {
 				e.printStackTrace();

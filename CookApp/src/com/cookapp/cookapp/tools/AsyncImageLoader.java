@@ -20,7 +20,7 @@ public class AsyncImageLoader {
 
 	private final Handler handler = new Handler();
 
-	public Bitmap DrawableloadImage(final String imageUrl,final String filePath,final ImageCallback callback) {
+	public Bitmap loadImage(final String imageUrl,final String filePath,final ImageCallback callback) {
 
 		//如果缓存过就从缓存中取出数据
 

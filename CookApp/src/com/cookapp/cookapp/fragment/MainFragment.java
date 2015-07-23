@@ -47,7 +47,8 @@ public class MainFragment extends Fragment implements OnClickListener{
 	List<ProductsModel> listProducts=new ArrayList<ProductsModel>();
 
 	SlideShowView slideShowView;
-
+	List<ProductsModel> slideShowProducts=new ArrayList<ProductsModel>();
+	
 	ListView imageList;
 	MyImageListAdapter myImageListAdapter;
 
@@ -189,7 +190,7 @@ public class MainFragment extends Fragment implements OnClickListener{
 				
 				final ImageView newRightImage=myViewHolder.rightImage;
 				
-				asyncImageLoader.DrawableloadImage(listProducts.get(position*2-1).imageLinkUrl,IMAGE_DOWNLOAD_PATH,new ImageCallback() {
+				asyncImageLoader.loadImage(listProducts.get(position*2-1).imageLinkUrl,IMAGE_DOWNLOAD_PATH,new ImageCallback() {
 
 					@Override
 					public void imageLoaded(Bitmap bitmap) {
@@ -197,7 +198,7 @@ public class MainFragment extends Fragment implements OnClickListener{
 					}
 				});
 				
-				asyncImageLoader.DrawableloadImage(listProducts.get(position*2).imageLinkUrl,IMAGE_DOWNLOAD_PATH,new ImageCallback() {
+				asyncImageLoader.loadImage(listProducts.get(position*2).imageLinkUrl,IMAGE_DOWNLOAD_PATH,new ImageCallback() {
 
 					@Override
 					public void imageLoaded(Bitmap bitmap) {
