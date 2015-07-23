@@ -1311,7 +1311,7 @@ containing a value of this type.
         public static final int feedback_list_feedActi=0x7f06005f;
         public static final int feedback_rela_MoreFrag=0x7f060091;
         public static final int findback_password_loginActi=0x7f06005e;
-        public static final int fl_inner=0x7f0600a7;
+        public static final int fl_inner=0x7f0600ab;
         public static final int flip=0x7f060008;
         public static final int fragment_layout_homeActi=0x7f060063;
         public static final int get_from_album_bnt_dialog=0x7f06007f;
@@ -1327,10 +1327,14 @@ containing a value of this type.
         public static final int image_list_mainFrag=0x7f06008a;
         public static final int integral_tex_per_cen_Frag=0x7f06009d;
         public static final int invitefriends_rela_MoreFrag=0x7f06008e;
-        public static final int item_image_service_feedBackActi=0x7f0600a3;
-        public static final int item_image_user_feedBackActi=0x7f0600a5;
-        public static final int item_tex_service_feedBackActi=0x7f0600a4;
-        public static final int item_tex_user_feedBackActi=0x7f0600a6;
+        public static final int item_image_service_feedBackActi=0x7f0600a7;
+        public static final int item_image_user_feedBackActi=0x7f0600a9;
+        public static final int item_img_left_main_frag=0x7f0600a4;
+        public static final int item_img_right_main_frag=0x7f0600a6;
+        public static final int item_tex_left_main_frag=0x7f0600a3;
+        public static final int item_tex_right_main_frag=0x7f0600a5;
+        public static final int item_tex_service_feedBackActi=0x7f0600a8;
+        public static final int item_tex_user_feedBackActi=0x7f0600aa;
         public static final int itemimag_compro_comproActi=0x7f0600a0;
         public static final int itemtexintro_compro_comproActi=0x7f0600a2;
         public static final int itemtextitle_compro_comproActi=0x7f0600a1;
@@ -1370,10 +1374,10 @@ containing a value of this type.
         public static final int pullFromStart=0x7f060001;
         public static final int pullUpFromBottom=0x7f060006;
         public static final int pull_refresh_scrollview_mainFrag=0x7f060088;
-        public static final int pull_to_refresh_image=0x7f0600a8;
-        public static final int pull_to_refresh_progress=0x7f0600a9;
-        public static final int pull_to_refresh_sub_text=0x7f0600ab;
-        public static final int pull_to_refresh_text=0x7f0600aa;
+        public static final int pull_to_refresh_image=0x7f0600ac;
+        public static final int pull_to_refresh_progress=0x7f0600ad;
+        public static final int pull_to_refresh_sub_text=0x7f0600af;
+        public static final int pull_to_refresh_text=0x7f0600ae;
         public static final int quit=0x7f06002d;
         public static final int radio=0x7f060049;
         public static final int radsca_image_back_homeActi=0x7f060068;
@@ -1511,12 +1515,13 @@ containing a value of this type.
         public static final int fragment_persion_center=0x7f03002e;
         public static final int fragment_random_scan=0x7f03002f;
         public static final int item_competitiveproducts=0x7f030030;
-        public static final int item_message_feedback_service=0x7f030031;
-        public static final int item_message_feedback_user=0x7f030032;
-        public static final int pull_to_refresh_header_horizontal=0x7f030033;
-        public static final int pull_to_refresh_header_vertical=0x7f030034;
-        public static final int support_simple_spinner_dropdown_item=0x7f030035;
-        public static final int title=0x7f030036;
+        public static final int item_list_main_fragment=0x7f030031;
+        public static final int item_message_feedback_service=0x7f030032;
+        public static final int item_message_feedback_user=0x7f030033;
+        public static final int pull_to_refresh_header_horizontal=0x7f030034;
+        public static final int pull_to_refresh_header_vertical=0x7f030035;
+        public static final int support_simple_spinner_dropdown_item=0x7f030036;
+        public static final int title=0x7f030037;
     }
     public static final class menu {
         public static final int main=0x7f0d0000;
