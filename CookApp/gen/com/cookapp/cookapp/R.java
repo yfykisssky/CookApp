@@ -1583,6 +1583,10 @@ containing a value of this type.
         public static final int loaded=0x7f08001e;
         public static final int loading=0x7f08001d;
         public static final int login=0x7f08002c;
+        public static final int login_pswd_null=0x7f08003f;
+        /**   
+         */
+        public static final int login_user_null=0x7f08003e;
         /**   
          */
         public static final int main_page=0x7f080031;

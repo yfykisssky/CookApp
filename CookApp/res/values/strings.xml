@@ -50,5 +50,8 @@
     <string name="sign_in">签到</string>
     <string name="photograph">拍照</string>
     <string name="get_from_album">从相册中选取</string>
+    <!--  -->
+    <string name="login_user_null">用户名不能为空</string>
+    <string name="login_pswd_null">密码不能为空</string>
 
 </resources>

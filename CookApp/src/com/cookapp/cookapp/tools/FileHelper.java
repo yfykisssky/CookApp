@@ -45,7 +45,7 @@ public class FileHelper {
 
 		File file = new File(filePath);
 
-		if (MD5Str!=null&&file.exists()&&!MD5Check.getFileMD5String(file).equals(MD5Str)) {
+		if (MD5Str!=null&&file.exists()&&!MD5Helper.getFileMD5String(file).equals(MD5Str)) {
 
 			return Uri.fromFile(file);
 
@@ -80,7 +80,7 @@ public class FileHelper {
 
 		File file = new File(filePath);
 
-		if (MD5Str!=null&&file.exists()&&!MD5Check.getFileMD5String(file).equals(MD5Str)) {
+		if (MD5Str!=null&&file.exists()&&!MD5Helper.getFileMD5String(file).equals(MD5Str)) {
 
 			InputStream is =new FileInputStream(file);
 
