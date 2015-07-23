@@ -46,5 +46,9 @@
     <string name="not_login">您还没有登录哦</string>
     <!--  -->
     <string name="commit">提交</string>
+    <string name="integral">积分</string>
+    <string name="sign_in">签到</string>
+    <string name="photograph">拍照</string>
+    <string name="get_from_album">从相册中选取</string>
 
 </resources>

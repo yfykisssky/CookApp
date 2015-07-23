@@ -15,10 +15,12 @@ public final class R {
         public static final int abc_slide_in_top=0x7f040003;
         public static final int abc_slide_out_bottom=0x7f040004;
         public static final int abc_slide_out_top=0x7f040005;
-        public static final int slide_in_from_bottom=0x7f040006;
-        public static final int slide_in_from_top=0x7f040007;
-        public static final int slide_out_to_bottom=0x7f040008;
-        public static final int slide_out_to_top=0x7f040009;
+        public static final int down_pop_dialog_enter=0x7f040006;
+        public static final int down_pop_dialog_exit=0x7f040007;
+        public static final int slide_in_from_bottom=0x7f040008;
+        public static final int slide_in_from_top=0x7f040009;
+        public static final int slide_out_to_bottom=0x7f04000a;
+        public static final int slide_out_to_top=0x7f04000b;
     }
     public static final class attr {
         /**  Custom divider drawable to use for elements in the action bar. 
@@ -1262,7 +1264,7 @@ containing a value of this type.
         public static final int QQ_login_bnt_loginActi=0x7f060076;
         public static final int SINA_login_bnt_loginActi=0x7f060078;
         public static final int WX_login_bnt_loginActi=0x7f060077;
-        public static final int about_rela_MoreFrag=0x7f06008d;
+        public static final int about_rela_MoreFrag=0x7f060090;
         public static final int about_version_code=0x7f060032;
         public static final int action_bar=0x7f060036;
         public static final int action_bar_activity_content=0x7f060021;
@@ -1281,19 +1283,21 @@ containing a value of this type.
          */
         public static final int auto_focus=0x7f060026;
         public static final int beginning=0x7f06001d;
-        public static final int bnt_percent_downloadfile=0x7f06007d;
+        public static final int bnt_percent_downloadfile=0x7f060080;
         public static final int both=0x7f060003;
-        public static final int buttonIn_guideActi=0x7f06007f;
+        public static final int buttonIn_guideActi=0x7f060082;
+        public static final int cancle_bnt_dialog=0x7f06007d;
         public static final int checkbox=0x7f060047;
-        public static final int clearsave_rela_MoreFrag=0x7f060089;
+        public static final int choice_photograph_bnt_dialog=0x7f06007b;
+        public static final int clearsave_rela_MoreFrag=0x7f06008c;
         public static final int collapseActionView=0x7f060019;
         public static final int commit_bnt_feedActi=0x7f060061;
-        public static final int competitiveproducts_rela_MoreFrag=0x7f06008e;
+        public static final int competitiveproducts_rela_MoreFrag=0x7f060091;
         public static final int decode=0x7f060027;
         public static final int decode_failed=0x7f060028;
         public static final int decode_succeeded=0x7f060029;
         public static final int default_activity_button=0x7f060042;
-        public static final int diagnoseweb_rela_MoreFrag=0x7f06008c;
+        public static final int diagnoseweb_rela_MoreFrag=0x7f06008f;
         public static final int dialog=0x7f06001a;
         public static final int disableHome=0x7f060014;
         public static final int disabled=0x7f060000;
@@ -1305,12 +1309,14 @@ containing a value of this type.
         public static final int expand_activities_button=0x7f060040;
         public static final int expanded_menu=0x7f060046;
         public static final int feedback_list_feedActi=0x7f06005f;
-        public static final int feedback_rela_MoreFrag=0x7f06008b;
+        public static final int feedback_rela_MoreFrag=0x7f06008e;
         public static final int findback_password_loginActi=0x7f06005e;
-        public static final int fl_inner=0x7f06009c;
+        public static final int fl_inner=0x7f0600a4;
         public static final int flip=0x7f060008;
         public static final int fragment_layout_homeActi=0x7f060063;
+        public static final int get_from_album_bnt_dialog=0x7f06007c;
         public static final int gridview=0x7f060009;
+        public static final int head_iamge_cen_Frag=0x7f060098;
         public static final int home=0x7f060020;
         public static final int homeAsUp=0x7f060011;
         public static final int iamge_logo_aboutActi=0x7f060056;
@@ -1318,32 +1324,33 @@ containing a value of this type.
         public static final int ifRoom=0x7f060016;
         public static final int image=0x7f060041;
         public static final int image_back_loginActi=0x7f06005d;
-        public static final int image_list_mainFrag=0x7f060084;
-        public static final int invitefriends_rela_MoreFrag=0x7f060088;
-        public static final int item_image_service_feedBackActi=0x7f060098;
-        public static final int item_image_user_feedBackActi=0x7f06009a;
-        public static final int item_tex_service_feedBackActi=0x7f060099;
-        public static final int item_tex_user_feedBackActi=0x7f06009b;
-        public static final int itemimag_compro_comproActi=0x7f060095;
-        public static final int itemtexintro_compro_comproActi=0x7f060097;
-        public static final int itemtextitle_compro_comproActi=0x7f060096;
+        public static final int image_list_mainFrag=0x7f060087;
+        public static final int integral_tex_per_cen_Frag=0x7f06009a;
+        public static final int invitefriends_rela_MoreFrag=0x7f06008b;
+        public static final int item_image_service_feedBackActi=0x7f0600a0;
+        public static final int item_image_user_feedBackActi=0x7f0600a2;
+        public static final int item_tex_service_feedBackActi=0x7f0600a1;
+        public static final int item_tex_user_feedBackActi=0x7f0600a3;
+        public static final int itemimag_compro_comproActi=0x7f06009d;
+        public static final int itemtexintro_compro_comproActi=0x7f06009f;
+        public static final int itemtextitle_compro_comproActi=0x7f06009e;
         public static final int launch_product_query=0x7f06002c;
         public static final int listMode=0x7f06000d;
         public static final int list_competitiveproducts_Acti=0x7f06005a;
         public static final int list_item=0x7f060043;
         public static final int login_bnt_loginAci=0x7f060072;
-        public static final int login_per_cen_Frag=0x7f060092;
+        public static final int login_per_cen_Frag=0x7f060096;
         public static final int main_image_back_homeActi=0x7f060065;
         public static final int main_tex_back_homeActi=0x7f060066;
         public static final int manualOnly=0x7f060004;
         public static final int message_edit_feedActi=0x7f060060;
-        public static final int messageremind_rela_MoreFrag=0x7f060086;
+        public static final int messageremind_rela_MoreFrag=0x7f060089;
         public static final int middle=0x7f06001e;
         public static final int more_image_back_homeActi=0x7f06006e;
         public static final int more_tex_back_homeActi=0x7f06006f;
         public static final int msglist_list_msglist=0x7f060079;
-        public static final int mycollection_bnt_percen_Frag=0x7f060094;
-        public static final int mymessage_bnt_percen_Frag=0x7f060093;
+        public static final int mycollection_bnt_percen_Frag=0x7f06009c;
+        public static final int mymessage_bnt_percen_Frag=0x7f06009b;
         public static final int name_edit_loginAci=0x7f060070;
         public static final int never=0x7f060015;
         public static final int none=0x7f06001c;
@@ -1352,7 +1359,7 @@ containing a value of this type.
         public static final int perscen_tex_back_homeActi=0x7f06006c;
         public static final int phone_login_tex_loginActi=0x7f060074;
         public static final int preview_view=0x7f060058;
-        public static final int prograss_percent_downloadfile=0x7f06007b;
+        public static final int prograss_percent_downloadfile=0x7f06007e;
         public static final int progress_circular=0x7f060024;
         public static final int progress_horizontal=0x7f060025;
         public static final int pswd_edit_loginAci=0x7f060071;
@@ -1360,11 +1367,11 @@ containing a value of this type.
         public static final int pullFromEnd=0x7f060002;
         public static final int pullFromStart=0x7f060001;
         public static final int pullUpFromBottom=0x7f060006;
-        public static final int pull_refresh_scrollview_mainFrag=0x7f060082;
-        public static final int pull_to_refresh_image=0x7f06009d;
-        public static final int pull_to_refresh_progress=0x7f06009e;
-        public static final int pull_to_refresh_sub_text=0x7f0600a0;
-        public static final int pull_to_refresh_text=0x7f06009f;
+        public static final int pull_refresh_scrollview_mainFrag=0x7f060085;
+        public static final int pull_to_refresh_image=0x7f0600a5;
+        public static final int pull_to_refresh_progress=0x7f0600a6;
+        public static final int pull_to_refresh_sub_text=0x7f0600a8;
+        public static final int pull_to_refresh_text=0x7f0600a7;
         public static final int quit=0x7f06002d;
         public static final int radio=0x7f060049;
         public static final int radsca_image_back_homeActi=0x7f060068;
@@ -1374,15 +1381,17 @@ containing a value of this type.
         public static final int relative_layout_more_homeActi=0x7f06006d;
         public static final int relative_layout_persion_cen_homeActi=0x7f06006a;
         public static final int relative_layout_radom_scan_homeActi=0x7f060067;
+        public static final int relative_logined_per_cen_Frag=0x7f060097;
+        public static final int relative_unlogin_per_cen_Frag=0x7f060095;
         public static final int restart_preview=0x7f06002e;
         public static final int return_scan_result=0x7f06002f;
         public static final int rotate=0x7f060007;
-        public static final int saveweb_rela_MoreFrag=0x7f060085;
-        public static final int scan_bnt_mainFrag=0x7f060081;
+        public static final int saveweb_rela_MoreFrag=0x7f060088;
+        public static final int scan_bnt_mainFrag=0x7f060084;
         public static final int scrollview=0x7f06000b;
         public static final int search_badge=0x7f06004c;
         public static final int search_bar=0x7f06004b;
-        public static final int search_bnt_mainFrag=0x7f060080;
+        public static final int search_bnt_mainFrag=0x7f060083;
         public static final int search_book_contents_failed=0x7f060030;
         public static final int search_book_contents_succeeded=0x7f060031;
         public static final int search_button=0x7f06004d;
@@ -1393,29 +1402,30 @@ containing a value of this type.
         public static final int search_plate=0x7f060050;
         public static final int search_src_text=0x7f060051;
         public static final int search_voice_btn=0x7f060055;
-        public static final int sharesetting_rela_MoreFrag=0x7f060087;
+        public static final int sharesetting_rela_MoreFrag=0x7f06008a;
         public static final int shortcut=0x7f060048;
         public static final int showCustom=0x7f060013;
         public static final int showHome=0x7f060010;
         public static final int showTitle=0x7f060012;
-        public static final int slideShowView_mainFrag=0x7f060083;
+        public static final int sign_in_bnt_per_cen_Frag=0x7f060099;
+        public static final int slideShowView_mainFrag=0x7f060086;
         public static final int split=0x7f060033;
         public static final int split_action_bar=0x7f060038;
         public static final int startpage_image_startActi=0x7f06007a;
         public static final int submit_area=0x7f060053;
         public static final int tabMode=0x7f06000e;
-        public static final int tex_cache_moreFrag=0x7f06008a;
+        public static final int tex_cache_moreFrag=0x7f06008d;
         public static final int tex_logo_aboutActi=0x7f060057;
-        public static final int tex_percent_downloadfile=0x7f06007c;
-        public static final int textIn_guide1Frag=0x7f06007e;
+        public static final int tex_percent_downloadfile=0x7f06007f;
+        public static final int textIn_guide1Frag=0x7f060081;
         public static final int third_login_mainFrag=0x7f060075;
         public static final int title=0x7f060045;
         public static final int title_loginActi=0x7f06005c;
         public static final int top_action_bar=0x7f06003a;
         public static final int up=0x7f06003b;
-        public static final int update_image_MoreFrag=0x7f060091;
-        public static final int update_rela_MoreFrag=0x7f06008f;
-        public static final int update_tex_MoreFrag=0x7f060090;
+        public static final int update_image_MoreFrag=0x7f060094;
+        public static final int update_rela_MoreFrag=0x7f060092;
+        public static final int update_tex_MoreFrag=0x7f060093;
         public static final int useLogo=0x7f06000f;
         public static final int viewPager_guideActi=0x7f060062;
         public static final int viewfinder_view=0x7f060059;
@@ -1487,22 +1497,23 @@ containing a value of this type.
         public static final int activity_register=0x7f030023;
         public static final int activity_scan=0x7f030024;
         public static final int activity_start=0x7f030025;
-        public static final int dialog_update_file=0x7f030026;
-        public static final int fragment_guide1=0x7f030027;
-        public static final int fragment_guide2=0x7f030028;
-        public static final int fragment_guide3=0x7f030029;
-        public static final int fragment_guide4=0x7f03002a;
-        public static final int fragment_main=0x7f03002b;
-        public static final int fragment_more=0x7f03002c;
-        public static final int fragment_persion_center=0x7f03002d;
-        public static final int fragment_random_scan=0x7f03002e;
-        public static final int item_competitiveproducts=0x7f03002f;
-        public static final int item_message_feedback_service=0x7f030030;
-        public static final int item_message_feedback_user=0x7f030031;
-        public static final int pull_to_refresh_header_horizontal=0x7f030032;
-        public static final int pull_to_refresh_header_vertical=0x7f030033;
-        public static final int support_simple_spinner_dropdown_item=0x7f030034;
-        public static final int title=0x7f030035;
+        public static final int dialog_headchange_percent_center=0x7f030026;
+        public static final int dialog_update_file=0x7f030027;
+        public static final int fragment_guide1=0x7f030028;
+        public static final int fragment_guide2=0x7f030029;
+        public static final int fragment_guide3=0x7f03002a;
+        public static final int fragment_guide4=0x7f03002b;
+        public static final int fragment_main=0x7f03002c;
+        public static final int fragment_more=0x7f03002d;
+        public static final int fragment_persion_center=0x7f03002e;
+        public static final int fragment_random_scan=0x7f03002f;
+        public static final int item_competitiveproducts=0x7f030030;
+        public static final int item_message_feedback_service=0x7f030031;
+        public static final int item_message_feedback_user=0x7f030032;
+        public static final int pull_to_refresh_header_horizontal=0x7f030033;
+        public static final int pull_to_refresh_header_vertical=0x7f030034;
+        public static final int support_simple_spinner_dropdown_item=0x7f030035;
+        public static final int title=0x7f030036;
     }
     public static final class menu {
         public static final int main=0x7f0d0000;
@@ -1565,7 +1576,9 @@ containing a value of this type.
         public static final int diagnoseweb=0x7f080027;
         public static final int feedback=0x7f080026;
         public static final int findbackpwsd=0x7f08002d;
+        public static final int get_from_album=0x7f08003d;
         public static final int hello_world=0x7f080014;
+        public static final int integral=0x7f08003a;
         public static final int invitefriends=0x7f080024;
         public static final int loaded=0x7f08001e;
         public static final int loading=0x7f08001d;
@@ -1583,6 +1596,7 @@ containing a value of this type.
         public static final int not_login=0x7f080038;
         public static final int persion_center=0x7f080034;
         public static final int phone_login_im=0x7f080030;
+        public static final int photograph=0x7f08003c;
         public static final int pull_to_refresh=0x7f080017;
         /**  Just use standard Pull Down String when pulling up. These can be set for languages which require it 
  Just use standard Pull Down String when pulling up. These can be set for languages which require it 
@@ -1607,6 +1621,7 @@ containing a value of this type.
          */
         public static final int scan_text=0x7f08002b;
         public static final int sharesetting=0x7f080023;
+        public static final int sign_in=0x7f08003b;
         public static final int text_in=0x7f080020;
         public static final int third_login=0x7f08002e;
         public static final int update=0x7f08002a;
@@ -1615,11 +1630,15 @@ containing a value of this type.
         /** 
         Base application theme, dependent on API level. This theme is replaced
         by AppBaseTheme from res/values-vXX/styles.xml on newer devices.
+
+
     
 
             Theme customizations available in newer API levels can go in
             res/values-vXX/styles.xml, while customizations related to
             backward-compatibility can go here.
+
+
         
 
         Base application theme for API 11+. This theme completely replaces
@@ -1840,6 +1859,7 @@ containing a value of this type.
         public static final int Widget_AppCompat_ProgressBar=0x7f0c000a;
         public static final int Widget_AppCompat_ProgressBar_Horizontal=0x7f0c0009;
         public static final int Widget_AppCompat_Spinner_DropDown_ActionBar=0x7f0c0022;
+        public static final int down_pop_dialog=0x7f0c008d;
     }
     public static final class styleable {
         /**  ============================================ 

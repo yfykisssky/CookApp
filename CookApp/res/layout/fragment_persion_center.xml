@@ -20,6 +20,41 @@
     </RelativeLayout>
 
     <RelativeLayout
+        android:id="@+id/relative_unlogin_per_cen_Frag"
+        android:layout_width="match_parent"
+        android:layout_height="100dp"
+        android:visibility="gone" >
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:orientation="vertical" >
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:text="@string/not_login"
+                android:textColor="@color/black" />
+
+            <Button
+                android:id="@+id/login_per_cen_Frag"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:background="@drawable/background_radius_white"
+                android:paddingBottom="5dp"
+                android:paddingLeft="20dp"
+                android:paddingRight="20dp"
+                android:paddingTop="5dp"
+                android:text="@string/login"
+                android:textColor="@color/black" />
+        </LinearLayout>
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/relative_logined_per_cen_Frag"
         android:layout_width="match_parent"
         android:layout_height="100dp" >
 
@@ -29,25 +64,37 @@
             android:layout_centerInParent="true"
             android:orientation="vertical" >
 
-            <TextView
-                 android:layout_gravity="center_horizontal"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="@string/not_login"
-                android:textColor="@color/black" />
+            <ImageView
+                android:id="@+id/head_iamge_cen_Frag"
+                android:layout_width="60dp"
+                android:layout_height="60dp"
+                android:background="@drawable/ic_launcher" />
 
-            <Button
-                android:layout_gravity="center_horizontal"
-                android:id="@+id/login_per_cen_Frag"
+            <LinearLayout
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:background="@drawable/background_radius_white"
-                android:paddingTop="5dp"
-                android:paddingBottom="5dp"
-                android:paddingLeft="20dp"
-                android:paddingRight="20dp"
-                android:text="@string/login"
-                android:textColor="@color/black" />
+                android:orientation="horizontal" >
+
+                <Button
+                    android:id="@+id/sign_in_bnt_per_cen_Frag"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/background_radius_white"
+                    android:text="@string/sign_in"
+                    android:textColor="@color/black" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/integral"
+                    android:textColor="@color/black" />
+
+                <TextView
+                    android:id="@+id/integral_tex_per_cen_Frag"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textColor="@color/black" />
+            </LinearLayout>
         </LinearLayout>
     </RelativeLayout>
 

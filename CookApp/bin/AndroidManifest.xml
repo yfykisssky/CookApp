@@ -70,6 +70,10 @@
             android:theme="@android:style/Theme.NoTitleBar" >
         </activity>
         <activity
+            android:name="com.cookapp.cookapp.activity.ClipImageActivity"
+            android:theme="@android:style/Theme.NoTitleBar" >
+        </activity>
+        <activity
             android:name="com.cookapp.cookapp.activity.CompetitiveProductsActivity"
             android:theme="@android:style/Theme.NoTitleBar" >
         </activity>
