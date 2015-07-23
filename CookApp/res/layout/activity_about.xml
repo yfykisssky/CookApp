@@ -4,6 +4,20 @@
     android:layout_height="match_parent"
     android:background="@color/background" >
 
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:background="@color/back_red" >
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:text="@string/about"
+            android:textColor="@color/white"
+            android:textSize="20sp" />
+    </RelativeLayout>
+
     <ImageView
         android:id="@+id/iamge_logo_aboutActi"
         android:layout_width="200dp"
