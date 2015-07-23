@@ -83,7 +83,7 @@ public class MainFragment extends Fragment implements OnClickListener{
 
 	void setTestData(){
 
-		List<String> listStr=new ArrayList<String>();
+	/*	List<String> listStr=new ArrayList<String>();
 		
 		for(int v=0;v<5;v++){
 
@@ -94,8 +94,8 @@ public class MainFragment extends Fragment implements OnClickListener{
 			listStr.add(productsModel.imageLinkUrl);
 		}
 
-		slideShowView.setImageList(listStr,IMAGE_DOWNLOAD_PATH);
-		slideShowView.setTransTime(3);
+		slideShowView.setImageList(listStr,IMAGE_DOWNLOAD_PATH);*/
+		//slideShowView.setTransTime(3);
 		
 		for(int v=0;v<50;v++){
 
@@ -188,15 +188,22 @@ public class MainFragment extends Fragment implements OnClickListener{
 
 				myViewHolder.rightImage=(ImageView)contentView.findViewById(R.id.item_img_right_main_frag);
 
-				myViewHolder.leftTex.setText(listProducts.get(position*2-1).title);
+				int leftPosition=position*2-1;
+				int rightPosition=position*2;
+				
+				if(leftPosition<0){
+					leftPosition=0;
+				}
+				
+				myViewHolder.leftTex.setText(listProducts.get(leftPosition).title);
 
-				myViewHolder.rightTex.setText(listProducts.get(position*2).title);
+				myViewHolder.rightTex.setText(listProducts.get(rightPosition).title);
 
 				final ImageView newLeftImage=myViewHolder.leftImage;
 
 				final ImageView newRightImage=myViewHolder.rightImage;
 
-				asyncImageLoader.loadImage(listProducts.get(position*2-1).imageLinkUrl,IMAGE_DOWNLOAD_PATH,new ImageCallback() {
+				asyncImageLoader.loadImage(listProducts.get(leftPosition).imageLinkUrl,IMAGE_DOWNLOAD_PATH,new ImageCallback() {
 
 					@Override
 					public void imageLoaded(Bitmap bitmap) {
@@ -204,7 +211,7 @@ public class MainFragment extends Fragment implements OnClickListener{
 					}
 				});
 
-				asyncImageLoader.loadImage(listProducts.get(position*2).imageLinkUrl,IMAGE_DOWNLOAD_PATH,new ImageCallback() {
+				asyncImageLoader.loadImage(listProducts.get(rightPosition).imageLinkUrl,IMAGE_DOWNLOAD_PATH,new ImageCallback() {
 
 					@Override
 					public void imageLoaded(Bitmap bitmap) {
